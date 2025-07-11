@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CategoryRepository extends CrudRepository<Category,Long> {
-    boolean existsByName(@NotNull String label);
+    boolean existsByLabel(@NotNull String label);
 }

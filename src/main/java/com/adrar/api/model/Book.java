@@ -1,6 +1,8 @@
 package com.adrar.api.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import org.hibernate.validator.constraints.Length;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -15,6 +17,8 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false, length = 50)
+    @Length(min = 2, message = "Le titre doit contenir au moins 2 caractère")
+    @NotBlank(message = "Le titre ne doit pas être vide")
     private String title;
     @Column(nullable = false, length = 255)
     private String description;

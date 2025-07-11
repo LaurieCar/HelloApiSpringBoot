@@ -40,4 +40,9 @@ public class BookService {
         return bookRepository.findById(id).stream().map(
                 BookDTOWrapper::wrapBookToBookDTO);
     }
+
+    // Ajouter un livre
+    public Book saveBook(Book book) {
+        return bookRepository.save(book);
+    }
 }

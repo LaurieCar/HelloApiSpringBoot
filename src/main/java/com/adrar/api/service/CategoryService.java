@@ -26,7 +26,7 @@ public class CategoryService {
 
     // Ajouter une catégorie
     public Category saveCategory(String label){
-        if(categoryRepository.existsByName(label)){
+        if(categoryRepository.existsByLabel(label)){
             throw new CategoryExistException("La catégorie existe déjà");
         }
         Category category = new Category(label);
